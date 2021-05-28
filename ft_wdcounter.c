@@ -13,7 +13,7 @@ int	ft_wdcounter(const char *str, char separator)
 	{
 		if (str[i] != ' ' && finded == 0 && ++counter)
 			finded = 1;
-		else if (str[i] == ' ')
+		else if (str[i] == separator)
 			finded = 0;
 		i++;
 	}
