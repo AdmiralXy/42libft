@@ -64,6 +64,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_wdcounter(const char *str, char separator);
 int		ft_abs(int value);
+int		ft_nbrcmp(const int n1, const int n2);
 
 // Files Functions
 

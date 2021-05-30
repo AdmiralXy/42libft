@@ -54,7 +54,8 @@ SRCS = ft_memccpy.c\
 		ft_putnbr_fd.c\
 		get_next_line.c\
 		ft_wdcounter.c\
-		ft_abs.c
+		ft_abs.c\
+		ft_nbrcmp.c
 
 SRCS_BONUSES = ft_lstnew.c\
 	  			ft_lstadd_front.c\
