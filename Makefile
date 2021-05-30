@@ -1,7 +1,7 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makefile_old                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: kricky <kricky@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
@@ -53,7 +53,8 @@ SRCS = ft_memccpy.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c\
 		get_next_line.c\
-		ft_wdcounter.c
+		ft_wdcounter.c\
+		ft_abs.c
 
 SRCS_BONUSES = ft_lstnew.c\
 	  			ft_lstadd_front.c\
