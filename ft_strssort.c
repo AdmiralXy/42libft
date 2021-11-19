@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strssort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kricky <kricky@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,18 +12,26 @@
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_strssort(char **strs)
 {
-	int	i;
+	int		i;
+	int		j;
+	char	*temp;
 
 	i = 0;
-	if (s)
+	while (strs[i])
 	{
-		while (s[i] != '\0')
+		j = 0;
+		while (strs[j])
 		{
-			write(fd, &s[i], 1);
-			i++;
+			if (ft_strcmp(strs[i], strs[j]) < 0)
+			{
+				temp = strs[i];
+				strs[i] = strs[j];
+				strs[j] = temp;
+			}
+			j++;
 		}
-		write(fd, "\n", 1);
+		i++;
 	}
 }

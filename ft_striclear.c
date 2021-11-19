@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_striclear.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kricky <kricky@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,18 +12,40 @@
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_striclear(char *str, int index)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	if (s)
+	j = 0;
+	while (str[i] != '\0')
 	{
-		while (s[i] != '\0')
+		if (i != index)
 		{
-			write(fd, &s[i], 1);
-			i++;
+			str[j] = str[i];
+			j++;
 		}
-		write(fd, "\n", 1);
+		i++;
 	}
+	str[j] = '\0';
+}
+
+void	ft_strpclear(char *str, char *address)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (str[i] != '\0')
+	{
+		if ((str + i) != address)
+		{
+			str[j] = str[i];
+			j++;
+		}
+		i++;
+	}
+	str[j] = '\0';
 }

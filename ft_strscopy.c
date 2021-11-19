@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strscopy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kricky <kricky@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,18 +12,24 @@
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+char	**ft_strscopy(char **strs)
 {
-	int	i;
+	int		strs_n;
+	int		i;
+	char	**result;
 
+	strs_n = 0;
+	while (strs[strs_n])
+		strs_n++;
+	result = malloc(sizeof(char *) * (strs_n + 1));
+	if (!result)
+		return (0);
 	i = 0;
-	if (s)
+	while (strs[i])
 	{
-		while (s[i] != '\0')
-		{
-			write(fd, &s[i], 1);
-			i++;
-		}
-		write(fd, "\n", 1);
+		result[i] = ft_strdup(strs[i]);
+		i++;
 	}
+	result[i] = 0;
+	return (result);
 }

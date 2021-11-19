@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strscreate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kricky <kricky@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,18 +12,12 @@
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+char	**ft_strscreate(char *str)
 {
-	int	i;
+	char	**strs;
 
-	i = 0;
-	if (s)
-	{
-		while (s[i] != '\0')
-		{
-			write(fd, &s[i], 1);
-			i++;
-		}
-		write(fd, "\n", 1);
-	}
+	strs = malloc(sizeof(char *) * 2);
+	strs[0] = ft_strdup(str);
+	strs[1] = 0;
+	return (strs);
 }

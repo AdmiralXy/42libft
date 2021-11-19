@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strsfree.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kricky <kricky@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/01 10:36:32 by kricky            #+#    #+#             */
-/*   Updated: 2021/09/01 10:36:33 by kricky           ###   ########.fr       */
+/*   Created: 2021/04/16 14:22:00 by kricky            #+#    #+#             */
+/*   Updated: 2021/11/19 22:55:00 by kricky           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_strsfree(char **strs)
 {
-	int		i;
+	int	i;
 
-	i = ft_strlen(s);
-	while (i > -1)
+	i = 0;
+	while (strs[i])
 	{
-		if (s[i] == (unsigned char)c)
-			return ((char *)(s + i));
-		i--;
+		free(strs[i]);
+		i++;
 	}
-	return (0);
+	free(strs);
 }

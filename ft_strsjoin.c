@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strsjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kricky <kricky@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,18 +12,24 @@
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+char	**ft_strsjoin(char **strs1, char **strs2)
 {
-	int	i;
+	int		n;
+	int		i;
+	int		j;
+	char	**result;
 
+	n = ft_strslen(strs1) + ft_strslen(strs2);
+	result = malloc(sizeof(char *) * (n + 1));
+	if (!result)
+		return (0);
 	i = 0;
-	if (s)
-	{
-		while (s[i] != '\0')
-		{
-			write(fd, &s[i], 1);
-			i++;
-		}
-		write(fd, "\n", 1);
-	}
+	j = 0;
+	while (strs1[j])
+		result[i++] = ft_strdup(strs1[j++]);
+	j = 0;
+	while (strs2[j])
+		result[i++] = ft_strdup(strs2[j++]);
+	result[i] = 0;
+	return (result);
 }

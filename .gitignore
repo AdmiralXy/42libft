@@ -1,2 +1,4 @@
 *.o
 libft.a
+.idea
+.vscode
